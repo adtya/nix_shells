@@ -1,8 +1,7 @@
-{ pkgs ? import <nixpkgs> {} }:
-
+{ pkgs ? import (fetchTarball https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz) {} }:
 pkgs.mkShell {
   buildInputs = [
-    pkgs.go_1_18
+    pkgs.go_1_20
   ];
   shellHook = ''
     export GOPATH=$PWD/.nix/go
